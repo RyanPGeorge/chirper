@@ -3,7 +3,7 @@
 # Chirper - a place for chirps
 
 
-## Chirper is a twitter clone app that allows a user to create short posts, or "chirps". Share your thoughts, read what others are chirping about, and add a squawk (like) to other chirps to let them it ruffled your feathers. 
+## Chirper is a twitter clone app that allows a user to create short posts, or "chirps". Share your thoughts, read what others are chirping about, and add a squawk (like) to other chirps to let them know it ruffled your feathers. 
 
 ### Technologies Used:
 
