@@ -5,6 +5,14 @@
 
 ## Chirper is a twitter clone app that allows a user to create short posts, or "chirps". Share your thoughts, read what others are chirping about, and add a squawk (like) to other chirps to let them know it ruffled your feathers. 
 
+---
+
+![wireframe](public/chirper-wireframe.png "Wireframe")
+![wireframe-mobile](public/chirper-mobile-wireframe.png "Mobile Wireframe")
+![ERD](public/Project-4-ERD.png "Mobile Wireframe")
+
+---
+
 ### Technologies Used:
 
 * React
