@@ -14,9 +14,8 @@
 
 ### Getting Started:
 
-* [GitHub](https://github.com/RyanPGeorge/project-4)
 * [Trello Board](https://trello.com/b/iQjnl53i/project-4)
-* [Heroku Deployment App (coming soon)]()
+* [Heroku Deployment App (coming soon)](https://heroku.com)
 
 <br>
 
