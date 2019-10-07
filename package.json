@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "dotenv": "^8.1.0",
+    "mongoose": "^5.7.3",
+    "morgan": "^1.9.1",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "serve-favicon": "^2.5.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -26,6 +30,7 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ]
+    ],
+    "proxy": "http://localhost:3001"
   }
 }
