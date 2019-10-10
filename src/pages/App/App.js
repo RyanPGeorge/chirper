@@ -5,12 +5,17 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
 import NavBar from '../../components/NavBar/NavBar';
+import * as puppyAPI from '../../services/puppies-api';
+import PostListPage from '../../pages/PostListPage/PostListPage';
+import AddPostPage from '../../pages/AddPostPage/AddPostPage';
+import EditPostPage from '../../pages/EditPostPage/EditPostPage';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      user: userService.getUser()
+      user: userService.getUser(),
+      posts: []
     };
   }
 
@@ -23,10 +28,43 @@ class App extends Component {
     this.setState({ user: userService.getUser() });
   };
 
+  handleAddPost = async newPostData => {
+    const newPost = await postAPI.create(newPostData);
+    this.setState(state => ({
+      posts: [...state.posts, newPost]
+    }), () => this.props.history.push('/'));
+  }
+
+  handleUpdatePost = async updatedPostData => {
+    const updatedPost = await postPI.update(updatedPostata);
+    const newPostsArray = this.state.posts.map(p => 
+      p._id === updatedPost._id ? updatedPost : p
+    );
+    this.setState(
+      {posts: newPostsArray},
+      // Using cb to wait for state to update before rerouting
+      () => this.props.history.push('/')
+    );
+  }
+
+  handleDeletePost= async id => {
+    await postAPI.deleteOne(id);
+    this.setState(state => ({
+      // Yay, filter returns a NEW array
+      posts: state.posts.filter(p => p._id !== id)
+    }), () => this.props.history.push('/'));
+  }
+
+  /*--- Lifecycle Methods ---*/
+
+  async componentDidMount() {
+    const posts = await postAPI.getAll();
+    this.setState({posts});
+
   render() {
     return (
       <div>
-        <header className='header-footer'>Chriper: Coming Soon....</header>
+        <header className='header-footer'>Chirper: Coming Soon....</header>
         <Switch>
           <Route
             exact

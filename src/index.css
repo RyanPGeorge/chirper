@@ -36,3 +36,37 @@ button:focus,
   font-size: 18px;
   text-align: center;
 }
+
+:root {
+  --black: #07020d;
+  --accent: #5db7de;
+  --background: #f1e9db;
+  --secondary: #a39b8b;
+  --secondary-dark: #716a5c;
+}
+
+a {
+  color: var(--accent);
+  padding: 1vmin;
+  border-radius: 1vmin;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: var(--black);
+  background-color: var(--accent);
+}
+
+a.active {
+  color: var(--background);
+  background-color: var(--black);
+  cursor: default;
+}
+
+dl {
+  margin-bottom: 0;
+}
+
+.margin-left-10 {
+  margin-left: 10px;
+}

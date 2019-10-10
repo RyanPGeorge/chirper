@@ -5,10 +5,6 @@ import './NavBar.css';
 const NavBar = props => {
   let nav = props.user ? (
     <div>
-      <Link to='/high-scores' className='NavBar-link'>
-        HIGH SCORES
-      </Link>
-      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <Link to='' onClick={props.handleLogout} className='NavBar-link'>
         LOG OUT
       </Link>
