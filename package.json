@@ -38,5 +38,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://warm-cove-62385.herokuapp.com"
+  "proxy": "http://localhost:3001"
 }
