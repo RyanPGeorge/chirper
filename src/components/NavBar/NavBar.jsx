@@ -5,13 +5,9 @@ import './NavBar.css';
 const NavBar = props => {
   let nav = props.user ? (
     <div>
-      <Link exact to='/'>
-        HOME
-      </Link>
+      <Link to='/'>HOME</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      <Link exact to='/add'>
-        ADD A CHIRP
-      </Link>
+      <Link to='/add'>ADD A CHIRP</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <Link to='' onClick={props.handleLogout} className='NavBar-link'>
         LOG OUT

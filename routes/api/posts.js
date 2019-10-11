@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const Post = require('../../models/post');
 var postsCtrl = require('../../controllers/api/posts');
 
 router.get('/', postsCtrl.index);

@@ -4,7 +4,8 @@ class AddPostPage extends Component {
   state = {
     invalidForm: true,
     formData: {
-      body: ''
+      body: '',
+      user: this.props.user && this.props.user._id
     }
   };
 
@@ -38,8 +39,8 @@ class AddPostPage extends Component {
           <div className='form-group'>
             <input
               className='form-control'
-              name='name'
-              value={this.state.formData.name}
+              name='body'
+              value={this.state.formData.post}
               onChange={this.handleChange}
               required
             />

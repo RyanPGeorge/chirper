@@ -3,6 +3,7 @@ import './PostListPage.css';
 import PostCard from '../../components/PostCard/PostCard';
 
 function PostListPage(props) {
+  console.log('post list', props);
   return (
     <>
       <h1>Chirps</h1>
@@ -11,7 +12,9 @@ function PostListPage(props) {
           <PostCard
             key={post._id}
             post={post}
+            name={post.user.name}
             handleDeletePost={props.handleDeletePost}
+            handleUpdatePost={props.handleUpdatePost}
           />
         ))}
       </div>

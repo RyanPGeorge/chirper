@@ -44,7 +44,10 @@ class App extends Component {
       p._id === updatedPost._id ? updatedPost : p
     );
     this.setState(
-      { posts: newPostsArray },
+      {
+        posts: newPostsArray,
+        user: userService.getUser()
+      },
       // Using cb to wait for state to update before rerouting
       () => this.props.history.push('/')
     );
@@ -72,16 +75,9 @@ class App extends Component {
     return (
       <div>
         <header className='header-footer'>Chirper: Coming Soon....</header>
+        <NavBar user={this.state.user} handleLogout={this.handleLogout} />
         <Switch>
           <Route
-            exact
-            path='/'
-            render={() => (
-              <NavBar user={this.state.user} handleLogout={this.handleLogout} />
-            )}
-          />
-          <Route
-            exact
             path='/signup'
             render={({ history }) => (
               <SignupPage
@@ -91,7 +87,6 @@ class App extends Component {
             )}
           />
           <Route
-            exact
             path='/login'
             render={({ history }) => (
               <LoginPage
@@ -100,33 +95,34 @@ class App extends Component {
               />
             )}
           />
-          <main>
-            <Route
-              exact
-              path='/'
-              render={({ history }) => (
-                <PostListPage
-                  post={this.state.posts}
-                  handleDeletePost={this.handleDeletePost}
-                />
-              )}
-            />
-            <Route
-              exact
-              path='/add'
-              render={() => <AddPostPage handleAddPost={this.handleAddPost} />}
-            />
-            <Route
-              exact
-              path='/edit'
-              render={({ history, location }) => (
-                <EditPostPage
-                  handleUpdatePost={this.handleUpdatePost}
-                  location={location}
-                />
-              )}
-            />
-          </main>
+          <Route
+            exact
+            path='/'
+            render={({ history }) => (
+              <PostListPage
+                posts={this.state.posts}
+                handleDeletePost={this.handleDeletePost}
+              />
+            )}
+          />
+          <Route
+            path='/add'
+            render={() => (
+              <AddPostPage
+                user={this.state.user}
+                handleAddPost={this.handleAddPost}
+              />
+            )}
+          />
+          <Route
+            path='/edit'
+            render={({ history, location }) => (
+              <EditPostPage
+                handleUpdatePost={this.handleUpdatePost}
+                location={location}
+              />
+            )}
+          />
           :
           <Redirect to='/login' />
           }/>

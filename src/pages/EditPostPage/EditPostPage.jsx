@@ -37,8 +37,8 @@ class EditPostPage extends Component {
           <div className='form-group'>
             <input
               className='form-control'
-              name='name'
-              value={this.state.formData.name}
+              name='body'
+              value={this.state.formData.body}
               onChange={this.handleChange}
               required
             />

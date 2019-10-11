@@ -9,8 +9,9 @@ module.exports = {
 };
 
 async function index(req, res) {
-  const posts = await Post.find({});
-  res.status(200).json(posts);
+  const posts = await Post.find({}).populate('user');
+  if (posts.userId === req.user_id) return res.status(200).json(posts);
+  return console.log('not your post');
 }
 
 async function show(req, res) {
